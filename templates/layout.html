@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Hello, Flask</title>
+    </head>
+    <body>
+        <h1>Hello, Flask</h1>
+        {% block body %}{% endblock %}
+    </body>
+</html>
+
+
+<!--
+NOTES:
+Ppl commonly use layout.html as a base file for other html files to extend, or build off of.
+
+The the block syntax lets you insert code from other files (see index.html) during preprocessing.
+-->
