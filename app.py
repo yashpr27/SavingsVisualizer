@@ -1,20 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import os
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+# turns on debug mode, allows app to refresh w changes w/o having to reboot server
+os.environ['FLASK_ENV'] = 'development'
+os.environ['FLASK_DEBUG'] = '1'
 
-if __name__ == "__main__":
-    app.run(debug="True")
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "GET":
+        return render_template("index.html")
+    else:
+        print(request.form)
+        return "Form Submitted!!"
+
+
 
 """
 NOTES:
 Flask = framework for running dynamic websites
 
-@app is a decorator for running certain methods when a certain URL is given
-"/" represents base url
+@app is a decorator for running certain methods when a certain http address is supplied
+"/" represents https method
+methods attr = allows for specifying what type of HTTPS request (GET, POST, etc.) that 
+               a certain http address can handle
 
+               
 By convention, Flask directory's should have static/ and templates/ for
 non-html and html files respectively.
 Within static/, ppl add css/, javascript/, images/, etc. sub-directories.

@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <p>Hello from index.html</p>
+    <!--
+    action attr = specifies what route to send form data to
+    method attr = specifies method by which form data is sent
+    -->
+    <form action="/" method="post">
+        What is your favorite color?
+        <select name="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
 {% endblock %}
-
 <!--
 NOTES:
 The extends syntax lets you build off of other html file.
