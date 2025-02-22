@@ -14,6 +14,9 @@ def index():
         print(request.form)
         return "Form Submitted!!"
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 
 """
