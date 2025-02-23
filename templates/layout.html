@@ -2,15 +2,48 @@
 
 <html lang="en">
     <head>
-        <title>Hello, Flask</title>
+        <title>SavingsVisualizer</title>
     </head>
     <body>
-        <div class="header">
-            <div class="site-name">SavingsVisualizer</div>
-            <link rel="stylesheet" href="static/css/layout.css">
+        <div class="container">
+            <div class="header">
+                <div class="site-name">SavingsVisualizer</div>
+                <link rel="stylesheet" href="static/css/layout.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            </div>
+            <div class="container2">
+                <div class="sidebar">
+                    <ul class="menu" style="list-style-type: none;">
+                        <li><a href="/" style="text"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/savings"><i class="fa-solid fa-piggy-bank"></i>Savings Tool</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            
         </div>
-        {% block body %}{% endblock %}
     </body>
+    <!-- Script to figure out header height -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function adjustContainer2() {
+            const header = document.querySelector(".header");
+            const container2 = document.querySelector(".container2");
+            
+            if (header && container2) {
+                let headerHeight = header.offsetHeight;
+                container2.style.top = headerHeight + "px"; 
+                container2.style.height = `calc(100vh - ${headerHeight}px)`;
+            }
+        }
+
+        adjustContainer2(); // Run on page load
+        window.addEventListener("resize", adjustContainer2);
+    });
+
+    </script>
 </html>
 
 

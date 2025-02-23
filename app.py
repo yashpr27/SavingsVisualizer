@@ -6,13 +6,14 @@ app = Flask(__name__)
 os.environ['FLASK_ENV'] = 'development'
 os.environ['FLASK_DEBUG'] = '1'
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def index():
-    if request.method == "GET":
-        return render_template("index.html")
-    else:
-        print(request.form)
-        return "Form Submitted!!"
+    return render_template("layout.html")
+
+@app.route("/savings")
+def savings():
+    return render_template("savingsTool.html")
+    
 
 
 if __name__ == "__main__":

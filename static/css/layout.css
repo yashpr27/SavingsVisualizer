@@ -1,23 +1,96 @@
-.header {
-    display: flex;
-    align-items: center;
-    padding-left: 2%;
-    padding: 1%;
-    position: fixed;
-    width: 98%;
-    top: 0;
-    right: 0;
-    background: rgba(10, 15, 30, 0.75);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.site-name {
-    font-size: clamp(1rem, 4vw, 2.5rem);
-    font-weight: bold;
-    color: #fff; /* White text for contrast */
-    letter-spacing: 1.5px;
-    font-family: 'Space Grotesk';
-    transition: all 0.3s ease-out forwards;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
+body {
+    background: #f5f7fa;
+    color: #2c3e50;
+}
+
+.container {
+    display: flex;
+    flex-direction: row ;
+}
+
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 3%;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e0e6ef;
+    z-index: 1000; /* Keeps it above other content */
+}
+
+.site-name {
+    color: #0077b6; /* Strong financial blue */
+    font-weight: bold;
+}
+
+.container2 {
+    position: fixed;
+    top:  0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 20%;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+    border-right: 2px solid #e0e6ef;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #ffffff;
+    overflow-y: auto; 
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #34495e;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu li a i {
+    margin-right: 10px;
+    color: #0077b6;
+}
+
+.menu li a:hover {
+    background: #e0f2ff;
+    color: #0077b6;
+}
