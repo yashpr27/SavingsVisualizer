@@ -1,3 +1,7 @@
+// This script does not work for some reason
+// goal was/is to specify min height and min width for window
+// (i.e.) window cannot be resized smaller than the min width or min height
+
 const minWidth = 120;
 const minHeight = 520;
 
