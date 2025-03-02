@@ -5,10 +5,15 @@ app = Flask(__name__)
 # turns on debug mode, allows app to refresh w changes w/o having to reboot server
 os.environ['FLASK_ENV'] = 'development'
 os.environ['FLASK_DEBUG'] = '1'
+login_status = 0 # 0 = not logged in, 1 = logged in
 
 @app.route("/")
 def index():
-    return render_template("layout.html")
+    global login_status
+    if login_status == 0:
+        return render_template("home.html")
+    else:
+        return render_template("layout.html")
 
 @app.route("/savings")
 def savings():

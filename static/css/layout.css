@@ -94,3 +94,10 @@ body {
     background: #e0f2ff;
     color: #0077b6;
 }
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}

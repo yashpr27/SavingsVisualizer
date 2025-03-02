@@ -3,13 +3,14 @@
 <html lang="en">
     <head>
         <title>SavingsVisualizer</title>
+        <link rel="stylesheet" href="static/css/layout.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        {% block head %}{% endblock %}
     </head>
-    <body>
+    <body class="{% block body_class %}{% endblock %}">
         <div class="container">
             <div class="header">
                 <div class="site-name">SavingsVisualizer</div>
-                <link rel="stylesheet" href="static/css/layout.css">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
             </div>
             <div class="container2">
                 <div class="sidebar">
@@ -22,7 +23,6 @@
                     {% block body %}{% endblock %}
                 </div>
             </div>
-            
         </div>
     </body>
     <!-- Script to figure out header height -->
@@ -39,7 +39,7 @@
             }
         }
 
-        adjustContainer2(); // Run on page load
+        adjustContainer2();
         window.addEventListener("resize", adjustContainer2);
     });
 
