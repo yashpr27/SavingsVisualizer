@@ -16,7 +16,13 @@ body.home .sidebar {
 body.home .container2 {
     justify-content: center;
 }
-.content { width: 100%; display: flex; justify-content: center; align-items: center; height: 100vh; }
+.content { 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .home-container {
     background: #ffffff;
